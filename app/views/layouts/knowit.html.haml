@@ -1,0 +1,80 @@
+!!! Strict
+%html{ :xmlns => "http://www.w3.org/1999/xhtml" }
+  %head
+    %meta{ :content => "text/html; charset=iso-8859-1", "http-equiv" => "Content-Type" }/
+    %meta{ :content => "English", "http-equiv" => "Content-Language" }/
+    %meta{ :name => "Distribution", :content => "Global" }/
+    %meta{ :name => "Robots", :content => "index,follow" }/
+    %meta{ :name => "Description", :content => "KnowledgeBase" }/
+    = stylesheet_link_tag "style.css"
+    %title
+      KnowIT - Knowledge is Power
+  %body
+    #header
+      #logo
+        %p.slogan
+          %b
+            Knowledge is Power
+          %br/
+          Creating Solutions
+        %div{ :style => "float: left;" }
+          %h1
+            = link_to("KnowIT",root_path)
+      #hmenu
+        = link_to("Home",root_path)
+        = link_to("New Article",new_page_path)
+        = link_to("Help","#")
+    .content
+      #articles
+        #left
+          = yield
+        #right
+          #rightmenu
+            = link_to("Test1",root_path)
+            = link_to("Test2",root_path)
+            = link_to("Test3",root_path)
+            = link_to("Test4",root_path)
+            #searchform
+              %form.search{ :action => "", :method => "post" }
+                %p
+                  %input#pojam.text{ :name => "pojam", :type => "text" }/
+                  %input.button{ :name => "search", :type => "submit", :value => "Search" }/
+          .rightarticle
+            %p
+              Welcome to KnowIT - Knowledge is Power!
+          .rightarticle
+            %p
+              = link_to("Article 1",root_path)
+              %br/
+              = link_to("Article 2",root_path)
+              %br/
+              = link_to("Article 3",root_path)
+              %br/
+              = link_to("Article 4",root_path)
+              %br/
+          .rightarticle_ad
+            = link_to("Tech Excel",root_path)
+          .rightarticle_ad
+            = link_to("DC SharePoint",root_path)
+      #links
+        %p
+          We'll add something nifty here.
+    #additional
+      %p
+        %b
+          Quote of the day:
+        There may be no 'I' in team, but there's a 'ME' if you look hard enough. - David Brent
+    #whiteline
+    #footer
+      %p{ :style => "float: left;" }
+        = link_to("Archive",root_path)
+        = image_tag("/images/separator.gif")
+        = link_to("RSS Feed",root_path)
+        %br/
+        Copyright 2009 The First American Corporation
+        %a{ :href => "#", :title => "Internet Jobs" }
+          Internet Jobs
+        %img{ :src => "/images/separator.gif", :alt => "" }/
+        Design: Luka Cvrk,
+        %a{ :href => "http://www.solucija.com/" }
+          Solucija

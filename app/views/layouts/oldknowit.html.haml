@@ -1,0 +1,30 @@
+!!!
+%html
+  %head
+    %title KnowIT - Do you?
+    %meta{"http-equiv"=>"Content-Type",:content=>"text/html; charset=utf-8"}/
+    = stylesheet_link_tag 'tabbed'
+    = javascript_include_tag 'tabbed'
+  %body
+    #application
+      #header
+        .container
+          .statusbar
+            .logo
+              %strong KnowIT - Do you?
+            .menu= link_to 'logout',:controller => 'account', :action => 'logout'
+          %br{:style=>"clear:both;"}/
+          .tabs
+            %ul.navigation
+              %li= link_to 'Member Approval'
+              %li= link_to 'User Management',:class => 'selected'
+              %li= link_to 'Pages'
+              %li= link_to 'Reports'
+              %li= link_to 'Help', '/'
+      #page
+        #content
+          = yield
+        #sidebar= @content_for_sidebar || false
+        %hr/
+      #footer
+        %p= "Copyright 2009 The Anomaly Group"

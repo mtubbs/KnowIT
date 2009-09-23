@@ -1,0 +1,13 @@
+
+/ @page is nil, this will blow up.
+/ %h2= @page.title
+/ %p= @page.body
+
+%p.date
+  = image_tag("/images/more.gif")
+  = link_to("Read more","#")
+  = image_tag("/images/comment.gif")
+  = link_to("Comments","#")
+  = image_tag("/images/timeicon.gif")
+  Date Goes Here.
+  =will_paginate(@pages)
